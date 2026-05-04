@@ -39,3 +39,34 @@ The system is designed with a strong emphasis on backend architecture, separatin
 │   ├── Forms/               # UI Screens (Login, Dashboard, Request Form)
 │   └── API_Clients/         # Modules responsible for communicating with the .NET backend
 └── README.md                # Project documentation
+```
+## 🛠️ Installation & Setup
+To run this enterprise application locally:
+
+1. Database & Backend Setup
+Clone the repository:
+
+```Bash
+git clone [https://github.com/stevenashrafkamal/IT-Request-ORASCOM-Project.git](https://github.com/stevenashrafkamal/IT-Request-ORASCOM-Project.git)
+```
+2. Open the `.NET` Backend solution (`.sln`) in **Visual Studio**.
+3. Restore the NuGet packages.
+4. Update the Database Connection String in the configuration file to point to your local SQL Server instance.
+5. Apply Entity Framework Migrations to generate the database schema:
+   ```bash
+   Update-Database
+   
+(Or run dotnet ef database update via CLI).
+
+6. Build and run the Backend project.
+
+2. Client Application Setup
+Open the Frontend (V.B) project in Visual Studio.
+
+Ensure the API endpoint configurations point to the running .NET backend URL.
+
+Build and Run the desktop application.
+
+## 👨‍💻 Developer
+Steven Ashraf
+Full-Stack Developer
