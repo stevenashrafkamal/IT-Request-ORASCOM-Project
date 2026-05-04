@@ -1,0 +1,12 @@
+# Build and Release Folders (Applies to C# Backend & VB Frontend)
+[Bb]in/
+[Oo]bj/
+
+# NuGet Packages
+[Pp]ackages/
+*.nupkg
+
+# Visual Studio User and Workspace Files
+.vs/
+*.user
+*.suo
