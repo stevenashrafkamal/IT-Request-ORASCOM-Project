@@ -1,5 +1,8 @@
 # 🏢 IT Request Management System (ORASCOM)
 
+![it-req Banner](it-req.webp)
+
+
 **An Enterprise Workflow Automation Platform**
 
 This project is a robust, centralized system developed to streamline, manage, and automate internal IT requests and ticketing workflows. The core engine is built entirely on the **.NET framework**, providing a secure, scalable, and high-performance backend architecture that processes business logic and data management.
