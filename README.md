@@ -82,7 +82,7 @@ IT-Request-ORASCOM-Solution/
     └── packages.config            # NuGet dependencies for the client
 ```
 ## 🛠️ Installation & Setup
-To run this enterprise application locally:
+To run this enterprise application locally, you will need Visual Studio and SQL Server.
 
 1. Database & Backend Setup
 Clone the repository:
@@ -90,24 +90,29 @@ Clone the repository:
 ```Bash
 git clone [https://github.com/stevenashrafkamal/IT-Request-ORASCOM-Project.git](https://github.com/stevenashrafkamal/IT-Request-ORASCOM-Project.git)
 ```
-2. Open the `.NET` Backend solution (`.sln`) in **Visual Studio**.
-3. Restore the NuGet packages.
-4. Update the Database Connection String in the configuration file to point to your local SQL Server instance.
-5. Apply Entity Framework Migrations to generate the database schema:
-   ```bash
-   Update-Database
-   
-(Or run dotnet ef database update via CLI).
+Open the .sln solution file in Visual Studio.
 
-6. Build and run the Backend project.
+Right-click the Solution and select Restore NuGet Packages.
+
+Open the Web.config file in the steven_ashraf project and update the Connection String to point to your local SQL Server instance.
+
+If using Entity Framework Migrations, run the following in the Package Manager Console:
+
+```PowerShell
+Update-Database
+```
+(Note: As the project uses Model1.edmx, you may alternatively generate the database from the model directly).
+5. Set the steven_ashraf project as the Startup Project and run it to host the backend services.
 
 2. Client Application Setup
-Open the Frontend (V.B) project in Visual Studio.
+Ensure the Backend project is running.
 
-Ensure the API endpoint configurations point to the running .NET backend URL.
+Inside Visual Studio, open the NSFF (VB.NET) project.
 
-Build and Run the desktop application.
+Check the ConnectionMDL.vb or App.config to ensure the API endpoint or connection configurations point to your local environment.
 
+Set NSFF as the Startup Project (or run multiple startup projects) and launch the desktop application.
 ## 👨‍💻 Developer
-Steven Ashraf
-Full-Stack Developer
+Steven Ashraf Kamal | Full-Stack Developer (.NET | MEAN Stack)
+
+Computer Science Student at Minya University
