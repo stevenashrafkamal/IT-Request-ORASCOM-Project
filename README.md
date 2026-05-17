@@ -2,46 +2,84 @@
 
 ![it-req Banner](it-req.webp)
 
+<div align="center">
+  <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET" />
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
+  <img src="https://img.shields.io/badge/VB.NET-512BD4?style=for-the-badge&logo=visual-studio&logoColor=white" alt="VB.NET" />
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" />
+  <img src="https://img.shields.io/badge/Entity%20Framework-5C2D91?style=for-the-badge" alt="Entity Framework" />
+</div>
+
+<br>
 
 **An Enterprise Workflow Automation Platform**
 
-This project is a robust, centralized system developed to streamline, manage, and automate internal IT requests and ticketing workflows. The core engine is built entirely on the **.NET framework**, providing a secure, scalable, and high-performance backend architecture that processes business logic and data management.
+This project is a robust, centralized system developed to streamline, manage, and automate internal IT requests and ticketing workflows for ORASCOM. The core engine is built entirely on the **.NET framework**, providing a secure, scalable, and high-performance backend architecture that processes business logic and data management.
+
+---
 
 ## 🚀 Architecture & Tech Stack
 
-The system is designed with a strong emphasis on backend architecture, separating the core business logic from the presentation layer.
+The system is designed with a strong emphasis on Layered Architecture, strictly separating the core business logic from the presentation layer.
 
-### ⚙️ The Core Engine (Backend)
-*   **Framework:** .NET (C#)
-*   **Architecture:** Layered Architecture (Controllers, Services, Data Access)
-*   **Database:** MS SQL Server
-*   **ORM:** Entity Framework (EF)
-*   **Security:** Role-Based Access Control (RBAC) and secure data transactions.
+### ⚙️ The Core Engine (Backend API)
+* **Framework:** ASP.NET (C#)
+* **Architecture:** MVC / Web API Layered Architecture
+* **Database:** MS SQL Server
+* **ORM:** Entity Framework (EF - Database First via `.edmx`)
+* **Security:** Role-Based Access Control (RBAC) and secure data transactions.
 
-### 🖥️ The Client Application (Frontend)
-*   **Technology:** VB.NET (Desktop Client)
-*   **Purpose:** Serves as a lightweight user interface that consumes and interacts with the powerful .NET core services to display data to the end-users.
+### 🖥️ The Client Application (Frontend Desktop)
+* **Technology:** VB.NET (Windows Forms)
+* **Purpose:** Serves as a lightweight, intuitive desktop user interface that consumes and interacts with the powerful .NET core services to display data and manage workflows for end-users.
 
-## ✨ Key Features (Backend Highlights)
+---
 
-*   **Workflow Automation:** Automates the lifecycle of an IT request from creation to resolution, reducing manual overhead.
-*   **State Management:** Tracks request statuses (Pending, In Progress, Resolved) with precise timestamping and auditing.
-*   **Data Integrity & Validation:** Strict backend validation ensures that no corrupt or incomplete data enters the enterprise database.
-*   **Role Management:** Distinct permission levels for standard employees and IT Administrators.
-*   **Optimized Queries:** Efficient database querying using Entity Framework to handle large volumes of enterprise requests seamlessly.
+## ✨ Key Features
+
+* **Workflow Automation:** Automates the lifecycle of an IT request from creation to resolution, reducing manual overhead.
+* **State Management:** Tracks request statuses (Pending, In Progress, Resolved) with precise timestamping and auditing.
+* **Data Integrity & Validation:** Strict backend validation ensures that no corrupt or incomplete data enters the enterprise database.
+* **Role Management:** Distinct permission levels for standard employees and IT Administrators.
+* **Optimized Queries:** Efficient database querying using Entity Framework to handle large volumes of enterprise requests seamlessly.
+
+---
 
 ## 📂 Project Structure
 
+Here is the precise architectural layout of the solution, showcasing the separation between the C# Backend and the VB.NET Client:
+
 ```text
-├── Backend (API)/           # The core .NET C# engine (Business logic, Models, DB Context)
-│   ├── Controllers/         # Handles incoming client requests
-│   ├── Models/              # Database entities and data structures
-│   ├── Services/            # Core business logic and workflow rules
-│   └── Data/                # Entity Framework configurations and Migrations
-├── Frontend (V.B)/          # The lightweight VB.NET Desktop Client
-│   ├── Forms/               # UI Screens (Login, Dashboard, Request Form)
-│   └── API_Clients/         # Modules responsible for communicating with the .NET backend
-└── README.md                # Project documentation
+IT-Request-ORASCOM-Solution/
+│
+├── steven_ashraf/                 # Backend (ASP.NET C# Core Engine)
+│   ├── App_Start/                 # RouteConfig, BundleConfig, etc.
+│   ├── Controllers/               # API & MVC Controllers handling requests
+│   │   ├── AccountController.cs
+│   │   ├── HomeController.cs
+│   │   ├── requstController.cs
+│   │   ├── ValuesController.cs
+│   │   ├── UserModel.cs           # Data structures
+│   │   ├── RequestModel.cs
+│   │   └── docModel.cs
+│   ├── Models/                    # Domain models and business entities
+│   ├── Providers/                 # Security and Authentication providers
+│   ├── Results/                   # Custom action results
+│   ├── Views/                     # Razor views for backend dashboards
+│   ├── Global.asax                # Application-level events
+│   ├── Model1.edmx                # Entity Framework Data Model 
+│   ├── Startup.cs                 # OWIN configuration
+│   └── Web.config                 # SQL Server connection and app settings
+│
+└── NSFF/                          # Frontend (VB.NET Windows Forms Client)
+    ├── App.config                 # Desktop client configuration
+    ├── ConnectionMDL.vb           # Database/API connection module
+    ├── Login.vb                   # Authentication UI Form
+    ├── loginFunction.vb           # Authentication logic
+    ├── Menu.vb                    # Main Dashboard/Navigation Form
+    ├── PubFunMdl.vb               # Public utility functions module
+    ├── reqFrm.vb                  # IT Request Submission Form
+    └── packages.config            # NuGet dependencies for the client
 ```
 ## 🛠️ Installation & Setup
 To run this enterprise application locally:
