@@ -8,7 +8,11 @@
   <img src="https://img.shields.io/badge/VB.NET-512BD4?style=for-the-badge&logo=visual-studio&logoColor=white" alt="VB.NET" />
   <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" />
   <img src="https://img.shields.io/badge/Entity%20Framework-5C2D91?style=for-the-badge" alt="Entity Framework" />
+
+  [![.NET Framework Build](https://github.com/stevenashrafkamal/IT-Request-ORASCOM-Project/actions/workflows/dotnet.yml/badge.svg)](https://github.com/stevenashrafkamal/IT-Request-ORASCOM-Project/actions/workflows/dotnet.yml)
 </div>
+
+
 
 <br>
 
@@ -17,6 +21,7 @@
 This project is a robust, centralized system developed to streamline, manage, and automate internal IT requests and ticketing workflows for ORASCOM. The core engine is built entirely on the **.NET framework**, providing a secure, scalable, and high-performance backend architecture that processes business logic and data management.
 
 ---
+
 
 ## 🚀 Architecture & Tech Stack
 
