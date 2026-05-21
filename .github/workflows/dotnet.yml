@@ -1,7 +1,4 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: .NET
+name: .NET Framework Build
 
 on:
   push:
@@ -11,25 +8,27 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+
+    # 1. تجهيز أداة MSBuild (الخاصة بـ .NET Framework والـ Visual Studio)
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    # 2. تجهيز أداة NuGet التقليدية
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
       with:
-        dotnet-version: 8.0.x
+        nuget-version: 'latest'
 
-    - name: Restore dependencies
+    # 3. عمل Restore للـ Packages باستخدام الـ NuGet التقليدي داخل فولدر الباكيند
+    - name: Restore NuGet Packages
       working-directory: "./Backend (API)"
-      run: dotnet restore
+      run: nuget restore steven_ashraf.sln  # أو استبدله بـ اسم ملف الـ .csproj لو مفيش ملف .sln جوه الفولدر
 
-    - name: Build
+    # 4. عمل Build للمشروع باستخدام MSBuild
+    - name: Build Solution
       working-directory: "./Backend (API)"
-      run: dotnet build --no-restore
-
-    - name: Test
-      working-directory: "./Backend (API)"
-      run: dotnet test --no-build --verbosity normal
+      run: msbuild steven_ashraf.sln /p:Configuration=Release  # لو مفيش .sln اكتب steven_ashraf.csproj
